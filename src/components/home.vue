@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <chen :option="option"
+    :tools="tools"></chen>
     <h1>{{ msg }}</h1>
     <h2>home</h2>
   </div>
@@ -9,11 +11,30 @@
   export default {
     data () {
       return {
-        msg: 'home'
+        msg: 'home',
+        option: {
+          title: '没想到吧',
+          back: '/first'
+        },
+        tools: [
+          {
+            label: '刷新',
+            icon: 'reset',
+            func: () => { console.log('没想到吧')}
+          },
+          {
+            label: '新增',
+            icon: 'plus'
+          },
+          {
+            label: '删除',
+            icon: 'delete'
+          }
+        ]
       }
     },
     beforeMount () {
-      this.getData()
+      // this.getData()
     },
     methods: {
       getData(){
