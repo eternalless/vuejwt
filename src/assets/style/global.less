@@ -1,0 +1,134 @@
+//global css
+@import 'variable';
+@import 'reset';
+@import 'element-ui';
+
+body {
+  font-family: PingFang SC, Arial, Hiragino Sans GB, Helvetica Neue, Helvetica, Microsoft Yahei, sans-serif;
+  background-color: #f2f3f5;
+}
+
+/*新增按钮全局样式*/
+.add-btn{
+  width: 72px;
+  height: 32px;
+  font-size: 12px;
+  line-height: 32px;
+  padding-left: 28px;
+  text-align: left;
+  color: #fff;
+  background: @btnBg;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  &:hover{
+    background: @btnBg-h;
+  }
+  &:active{
+    background: @btnBg-a;
+  }
+  i{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+}
+/*定义全局输入框样式*/
+.container{
+  /*重置输入框高度*/
+  .el-input__inner{
+    height: 32px;
+    line-height: 32px;
+  }
+  .el-select{
+    width: 100%;
+  }
+  /*重置下拉框图表高度*/
+  .el-input__icon{
+    line-height: 32px;
+  }
+  /*自定义placeholder样式*/
+  input::-webkit-input-placeholder{ /*WebKit browsers*/
+    font-size: 12px;
+    color: #C2C6D3;
+  }
+  input:-moz-placeholder{ /*Mozilla Firefox 4 to 18*/
+    font-size: 12px;
+    color: #C2C6D3;
+  }
+  input:-ms-input-placeholder{ /*Internet Explorer*/
+    font-size: 12px;
+    color: #C2C6D3;
+  }
+  input::-moz-placeholder{ /*Mozilla Firefox 19+*/
+    font-size: 12px;
+    color: #C2C6D3;
+  }
+  /*重置下拉框三角图表*/
+  [class*=" el-icon-"], [class^=el-icon-]{
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+  .el-icon-arrow-up:before{
+    font-size: 14px;
+    content: "\e60c";
+  }
+  /*时间范围选择框样式重置*/
+  .el-icon-date:before{
+    font-size: 14px;
+    content: "\e60d";
+  }
+  /*icon高度位置, 时间连接符重置*/
+  .el-input__icon.el-range__icon.el-icon-date,
+  .el-date-editor .el-range-separator,
+  .el-date-editor .el-range__close-icon{
+    line-height: 24px;
+  }
+  /*时间输入框宽度固定*/
+  .el-range-editor.el-input__inner{
+    width: 200px;
+  }
+}
+
+/* 项目列表与任务列表layout */
+.project-layout {
+  margin: 0 12px 0 28px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  .cell {
+    flex: 0 0 25%;
+    padding: 0 16px 16px 0;
+    .card {
+    }
+  }
+}
+/*
+ * - 1680: 4
+ 1680 - 1920: 5
+ 1920 - *: 6
+*/
+@media screen and (max-width: 1680px) {
+  .project-layout {
+    .cell {
+      flex: 0 0 25%;
+    }
+  }
+}
+@media screen and (min-width: 1680px) and (max-width:1920px) {
+  .project-layout {
+    .cell {
+      flex: 0 0 20%;
+    }
+  }
+}
+@media screen and (min-width:1920px) {
+  .project-layout {
+    .cell {
+      flex: 0 0 16.6666666667%;
+    }
+  }
+}
