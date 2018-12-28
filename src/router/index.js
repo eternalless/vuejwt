@@ -54,7 +54,7 @@ let routerArr = [
   {path: '/', redirect: 'login'}
 ]
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: routerArr
 })
 //路由跳转之前

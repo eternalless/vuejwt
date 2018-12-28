@@ -37,7 +37,7 @@
         if(!this.name) return
         if(!this.password) return
         if(this.name === 'chen' && this.password === 'chen') {
-          location.replace('/index')
+          this.$router.push('/index')
         } else {
           this.$message.error('账号或密码错了哦！！！');
         }
